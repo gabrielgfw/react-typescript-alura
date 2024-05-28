@@ -6,12 +6,12 @@ const CabecalhoEstilizado = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em 4em
+  padding: 2em 4em;
 `;
 
 const Container = styled.div`
   display: flex;
-  align-item: center;
+  align-items: center;
   justify-content: space-around;
   flex-grow: .1;
 `;
