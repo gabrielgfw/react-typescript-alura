@@ -1,20 +1,28 @@
 import './App.css';
 import Cabecalho from './components/cabecalho';
 import Container from './components/container';
+import Grafico from './components/grafico';
 import Rodape from './components/rodape';
 import Tabela from './components/tabela';
 import Titulo from './components/titulo';
 import useDadosConsulta from './useDadosConsulta';
+import useDadosProfissional from './useDadosProfissional';
 
 function App() {
-  const { dados, erro } = useDadosConsulta();
+  const { dados: consultas, erro: consultasErro } = useDadosConsulta();
+  const { dados: profissionais, erro: profissionaisErro } = useDadosProfissional();
+
+  if(consultasErro || profissionaisErro) {
+    console.error("Ocorreu um erro na requisição");
+  }
 
   return (
     <>
       <Cabecalho />
       <Container>
         <Titulo>Área administrativa</Titulo>
-        <Tabela consultas={ dados }/>
+        <Tabela consultas={ consultas }/>
+        <Grafico consultas={ consultas } profissionais={ profissionais }/>
       </Container>
       <Rodape />
     </>
