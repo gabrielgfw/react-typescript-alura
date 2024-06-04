@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import IProfissional from "../../types/IProfissional";
 import Card from "./card";
+import Botao from "../botao";
 
 const SecaoCard = styled.section`
   display: flex;
@@ -9,15 +10,24 @@ const SecaoCard = styled.section`
   width: 100%;
 `;
 
+const ContainerCard = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
 
 function Avaliacao({ profissionais } : { profissionais: IProfissional[] | null }) {
   return (
-    <SecaoCard>
-      { profissionais?.map(profissional => {
-          return <Card profissional={ profissional }/>
-        }) 
-      }
-    </SecaoCard>
+    <ContainerCard>
+      <SecaoCard>
+        { profissionais?.map(profissional => {
+            return <Card profissional={ profissional }/>
+          }) 
+        }
+      </SecaoCard>
+      <Botao>Ver mais</Botao>
+    </ContainerCard>
   )
 }
 

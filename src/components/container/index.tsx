@@ -6,6 +6,8 @@ const Container = styled.section`
   border-radius: 16px;
   padding: 2em;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default Container;
