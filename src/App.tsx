@@ -1,4 +1,5 @@
 import './App.css';
+import Avaliacao from './components/avaliacao';
 import Cabecalho from './components/cabecalho';
 import Container from './components/container';
 import Grafico from './components/grafico';
@@ -23,6 +24,7 @@ function App() {
         <Titulo>Área administrativa</Titulo>
         <Tabela consultas={ consultas }/>
         <Grafico consultas={ consultas } profissionais={ profissionais }/>
+        <Avaliacao profissionais={ profissionais }/>
       </Container>
       <Rodape />
     </>
